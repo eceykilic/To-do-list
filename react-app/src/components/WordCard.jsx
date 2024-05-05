@@ -2,7 +2,7 @@ import axios from "axios";
 
 const WordCard = (props) => {
   const handleDelete = () => {
-    axios.delete(`http://localhost:9000/api/v1/workintech/word/${props.word.id}`)
+    axios.delete(`https://to-do-list-backend-4b2o.onrender.com/api/v1/workintech/word/${props.word.id}`)
       .then(() => {
         props.onDelete(props.word.id);
       })

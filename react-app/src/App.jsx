@@ -9,7 +9,7 @@ function App() {
   const [words, setWords] = useState([]);
 
   const fetchData = () => {
-    axios.get('http://localhost:9000/api/v1/workintech/word/')
+    axios.get('https://to-do-list-backend-4b2o.onrender.com/api/v1/workintech/word/')
       .then(response => {
         setWords(response.data);
       })
@@ -25,7 +25,7 @@ function App() {
       description: description
     };
   
-    axios.post('http://localhost:9000/api/v1/workintech/word/', data, {
+    axios.post('https://to-do-list-backend-4b2o.onrender.com/api/v1/workintech/word/', data, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -39,7 +39,7 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:9000/api/v1/workintech/word/${id}`);
+    await axios.delete(`https://to-do-list-backend-4b2o.onrender.com/api/v1/workintech/word/${id}`);
     setWords(prevWords => prevWords.filter(word => word.id !== id));
   };
 
